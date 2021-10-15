@@ -1,0 +1,13 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.mr-2{
+    margin-right: 1em;
+}
+.font-large{
+    font-size: large;
+}
+.mat-toolbar.mat-primary {
+    background: mediumseagreen;
+    color: #fff;
+}

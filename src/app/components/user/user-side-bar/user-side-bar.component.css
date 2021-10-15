@@ -1,0 +1,5 @@
+.side-bar{
+    display: block;
+    resize: both;
+  overflow: auto;
+}

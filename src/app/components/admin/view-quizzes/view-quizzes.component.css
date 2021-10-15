@@ -1,0 +1,17 @@
+.example-header-image {
+    background-image: url('../../../../assets/test.png');
+    background-size: cover;
+  }
+.mt10{
+    margin-top: 10px;
+}
+.ml20{
+    margin-left: 20px;
+}
+.btn{
+    background-color: #3CB371;
+    color: white;
+}
+.btn-stroked{
+    color: #3CB371;;
+}

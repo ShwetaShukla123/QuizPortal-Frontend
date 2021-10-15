@@ -1,0 +1,111 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <mat-card class="user-card ">
+                <div class="col-md-8 offset-md-2 ">
+                    <h1 class="text-center">Signup </h1>
+                <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Username</mat-label>
+                        <input class="form-control" 
+                        matInput 
+                        name="username" 
+                        placeholder="Enter username" 
+                        ngModel 
+                        required
+                        #username="ngModel"
+                        [ngClass]="{'is-invalid': (username.touched || username.dirty) && !username.valid }">   
+                    </mat-form-field>
+                    <div class="invalid-feedback">
+                        <small *ngIf="username.touched && username.hasError('required')">
+                          Username is required.
+                        </small>
+                    </div>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input class="form-control" type="password" 
+                        name="password" 
+                        matInput 
+                        placeholder="Enter password" 
+                        ngModel 
+                        required
+                        #userPassword="ngModel"
+                        [ngClass]="{'is-invalid': (userPassword.touched || userPassword.dirty) && !userPassword.valid }">   
+                    </mat-form-field>
+                    <div class="invalid-feedback">
+                        <small *ngIf="userPassword.touched && userPassword.hasError('required')">
+                          Password is required.
+                        </small>
+                    </div>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input class="form-control" 
+                        matInput 
+                        name="firstName" 
+                        placeholder="Enter firstname"
+                        ngModel 
+                        required 
+                        #userFirstName="ngModel"
+                        [ngClass]="{'is-invalid': (userFirstName.touched || userFirstName.dirty) && !userFirstName.valid }">   
+                    </mat-form-field>
+                    <div class="invalid-feedback">
+                        <small *ngIf="userFirstName.touched && userFirstName.hasError('required')">
+                          Firstname is required.
+                        </small>
+                    </div>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input class="form-control" 
+                        matInput 
+                        name="lastName" 
+                        placeholder="Enter lastname" 
+                        ngModel 
+                        required 
+                        #userLastName="ngModel"
+                        [ngClass]="{'is-invalid': (userLastName.touched || userLastName.dirty) && !userLastName.valid }">   
+                    </mat-form-field>
+                    <div class="invalid-feedback">
+                        <small *ngIf="userLastName.touched && userLastName.hasError('required')">
+                          Lastname is required.
+                        </small>
+                    </div>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Email Address</mat-label>
+                        <input class="form-control" type="email" 
+                        name="email" 
+                        matInput 
+                        placeholder="Enter email" 
+                        ngModel 
+                        appEmailvalidator
+                        required 
+                        #userEmailVar="ngModel"
+                        [ngClass]="{'is-invalid': (userEmailVar.touched || userEmailVar.dirty) && !userEmailVar.valid }">   
+                    </mat-form-field>
+                    <div class="invalid-feedback">
+                        <small *ngIf="userEmailVar.touched && userEmailVar.hasError('required')">
+                          User email is required.
+                        </small>
+                        <small *ngIf="userEmailVar.touched && userEmailVar.hasError('emailvalidator')">
+                          Please provide a valid email address
+                        </small>
+                    </div>
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button class="btn-register" [disabled]="!registerForm.valid">Register</button>
+                        <button type="reset" mat-raised-button class="btn-clear">Clear</button>
+                    </div>
+                    <br>
+                </form>
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
+                        Already have an account? <a routerLink="/login" class="ml-2">Log In</a>
+                    </div>
+                </div>
+            </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

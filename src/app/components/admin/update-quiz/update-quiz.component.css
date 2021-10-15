@@ -1,0 +1,9 @@
+.w100{
+    width: 100%;
+}
+.mt{
+    margin-top: 1em;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: #3CB371;
+}
